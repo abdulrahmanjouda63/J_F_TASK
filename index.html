@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Transaction Data</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Customer Transaction Data</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Filter Data</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="customerName">Filter by customer name:</label>
+                                <input class="form-control" type="text" id="customerName" oninput="filterData()">
+                            </div>
+                            <div class="form-group">
+                                <label for="transactionAmount">Filter by transaction amount:</label>
+                                <input class="form-control" type="number" id="transactionAmount" oninput="filterData()">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Add New Customer</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="newCustomerName">Customer Name:</label>
+                                <input class="form-control" type="text" id="newCustomerName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newTransactionAmount">Initial Transaction Amount:</label>
+                                <input class="form-control" type="number" id="newTransactionAmount" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newDate">Date:</label>
+                                <input class="form-control" type="date" id="newDate" required>
+                            </div>
+                            <button class="btn btn-primary" id="addCustomerButton">Add Customer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-12 ">
+                <div class="card my-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Customer Transaction Data</h5>
+                        <table class="table table-striped-columns" id="dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Customer Name</th>
+                                    <th>Transaction Amount</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dataBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card my-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Chart</h5>
+                        <canvas class="align-items-center w-50" id="chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
